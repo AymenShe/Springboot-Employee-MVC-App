@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: fr.devavance.tp_springboot_mvc_jpa_employee.TpSpringbootMvcJpaEmployeeApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.635 s - in fr.devavance.tp_springboot_mvc_jpa_employee.TpSpringbootMvcJpaEmployeeApplicationTests
