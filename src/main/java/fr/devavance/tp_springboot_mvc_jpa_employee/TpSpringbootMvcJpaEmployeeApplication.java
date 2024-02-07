@@ -10,6 +10,5 @@ public class TpSpringbootMvcJpaEmployeeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TpSpringbootMvcJpaEmployeeApplication.class, args);
 	}
-	EmployeeDAOImpl employees = new EmployeeDAOImpl();
 
 }

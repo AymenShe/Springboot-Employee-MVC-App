@@ -1,1 +1,5 @@
+fr/devavance/tp_springboot_mvc_jpa_employee/beans/Fonction.class
 fr/devavance/tp_springboot_mvc_jpa_employee/TpSpringbootMvcJpaEmployeeApplication.class
+fr/devavance/tp_springboot_mvc_jpa_employee/dao/EmployeeDAOImpl.class
+fr/devavance/tp_springboot_mvc_jpa_employee/beans/Employee.class
+fr/devavance/tp_springboot_mvc_jpa_employee/dao/IEmployeeDAO.class

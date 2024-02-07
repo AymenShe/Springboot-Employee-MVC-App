@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+</head>
+
+<body>
+<h2>All employees</h2>
+
+<form method="post" th:action="@{/addemployee}" th:object="${Employee}" >
+    Nom:<input type="text" th:field="*{name}">
+    Address:<input type="text" th:field="*{address}">
+    Mail:<input type="text" th:field="*{mail}">
+    Phone:<input type="text" th:field="*{phone}">
+    Couleur:<input type="text" th:field="*{fonction.codeCouleur}">
+</form>
+<ul>
+    <li
+        th:each="v : ${employees}" th:text="${v.name}"
+        th:style="'background-color:' + ${v.fonction.codeCouleur}"
+    >
+    </li>
+</ul>
+
+</body>
+</html>

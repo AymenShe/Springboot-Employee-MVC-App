@@ -2,9 +2,11 @@ package fr.devavance.tp_springboot_mvc_jpa_employee.dao;
 
 import fr.devavance.tp_springboot_mvc_jpa_employee.beans.Employee;
 import fr.devavance.tp_springboot_mvc_jpa_employee.beans.Fonction;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
+@Component
 public class EmployeeDAOImpl implements IEmployeeDAO{
 
     ArrayList<Employee> Employees;
@@ -28,10 +30,8 @@ public class EmployeeDAOImpl implements IEmployeeDAO{
     }
     @Override
     public ArrayList<Employee> findAll() {
-        for (Employee employee  : this.Employees) {
-            System.out.println(employee.getName() + " " + employee.getId());
-        };
-        return this.Employees;
+
+        return new ArrayList<>(Employees);
     }
 
     @Override

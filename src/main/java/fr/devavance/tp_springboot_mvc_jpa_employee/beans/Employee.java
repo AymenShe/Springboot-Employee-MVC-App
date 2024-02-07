@@ -17,15 +17,15 @@ public class Employee {
         this.id = id;
         this.name = name;
         this.address = address;
-        this.email = email;
         this.phone = phone;
+        this.email = email;
         this.fonction = fonction;
     }
     public Employee( String name, String address, String email, String phone, Fonction fonction){
         this.name = name;
         this.address = address;
-        this.email = email;
         this.phone = phone;
+        this.email = email;
         this.fonction = fonction;
 
         this.id = ++count;
