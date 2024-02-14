@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="/css/employee.css">
 <head>
     <meta charset="UTF-8">
     <title>Employees</title>
@@ -8,20 +9,36 @@
 <body>
 <h2>All employees</h2>
 
-<form method="post" th:action="@{/addemployee}" th:object="${Employee}" >
-    Nom:<input type="text" th:field="*{name}">
-    Address:<input type="text" th:field="*{address}">
-    Mail:<input type="text" th:field="*{mail}">
-    Phone:<input type="text" th:field="*{phone}">
-    Couleur:<input type="text" th:field="*{fonction.codeCouleur}">
-</form>
 <ul>
     <li
-        th:each="v : ${employees}" th:text="${v.name}"
-        th:style="'background-color:' + ${v.fonction.codeCouleur}"
+            th:each="v : ${employees}" th:text="${v.name}"
+            th:style="'background-color:' + ${v.fonction.getCodeCouleur}"
     >
     </li>
 </ul>
+
+<form method="post" th:action="@{/addemployee}" th:object="${employee}" >
+    <p>
+        <label> Nom: <input type="text" th:field="*{name}"></label>
+    </p>
+    <p>
+        <label>Address: <input type="text" th:field="*{address}"></label>
+    </p>
+    <p>
+        <label>Mail:<input type="text" th:field="*{email}"></label>
+    </p>
+    <p>
+        <label>Phone:<input type="text" th:field="*{phone}"></label>
+    </p>
+    <p>
+        <select name="color">
+            <option th:each="colorOpt : ${T(fr.devavance.tp_springboot_mvc_jpa_employee.beans.Fonction).values()}"
+                    th:value="${colorOpt}" th:text="${colorOpt}"></option>
+        </select>
+    </p>
+    <button>Submit</button>
+</form>
+
 
 </body>
 </html>

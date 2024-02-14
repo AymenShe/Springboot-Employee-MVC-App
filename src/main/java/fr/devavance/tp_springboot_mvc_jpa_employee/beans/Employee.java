@@ -1,26 +1,30 @@
 package fr.devavance.tp_springboot_mvc_jpa_employee.beans;
 
-public class Employee {
-    private int id;
-    private static int count = 0;
+import jakarta.persistence.*;
+import lombok.Data;
 
+@Entity
+@Table(name = "Employee")
+public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    //private static Long count = 0;
+    @Column(name = "name")
     private String name;
+    @Column(name = "address")
     private String address;
+    @Column(name = "email")
     private String email;
+    @Column(name = "phone")
     private String phone;
+    @Column(name = "fonction")
     public Fonction fonction;
 
     public Employee(){
     }
 
-    public Employee(int id, String name, String address, String email, String phone, Fonction fonction){
-        this.id = id;
-        this.name = name;
-        this.address = address;
-        this.phone = phone;
-        this.email = email;
-        this.fonction = fonction;
-    }
+
     public Employee( String name, String address, String email, String phone, Fonction fonction){
         this.name = name;
         this.address = address;
@@ -28,13 +32,12 @@ public class Employee {
         this.email = email;
         this.fonction = fonction;
 
-        this.id = ++count;
     }
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
