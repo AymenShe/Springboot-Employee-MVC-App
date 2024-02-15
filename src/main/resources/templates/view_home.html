@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <link rel="stylesheet" href="/css/employee.css">
+<style>
+    body{
+        width: fit-content;
+    }
+    form{
+    }
+</style>
 <head>
     <meta charset="UTF-8">
     <title>Employees</title>
 </head>
 
 <body>
-<h2>All employees</h2>
+<h1>Liste des employées</h1>
 
 <ul>
-    <li
-            th:each="v : ${employees}" th:text="${v.name}"
-            th:style="'background-color:' + ${v.fonction.getCodeCouleur}"
-    >
-    </li>
+    <div th:each="v : ${employees}">
+        <a th:text="${v.id}" th:href="@{/employee/home}"></a>
+        <li th:text="${v.name}" th:style="'background-color:' + ${v.fonction.getCodeCouleur}"> </li>
+    </div>
 </ul>
 
-<form method="post" th:action="@{/addemployee}" th:object="${employee}" >
+<h1>Formulaire d'ajout d'un employée</h1>
+
+<form method="post" th:action="@{/employee/addemployee}" th:object="${employee}" >
     <p>
         <label> Nom: <input type="text" th:field="*{name}"></label>
     </p>
