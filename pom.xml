@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>fr.devavance</groupId>
-	<artifactId>tp_springboot_mvc_jpa_employee</artifactId>
+	<artifactId>tp_springboot_2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tp_springboot_mvc_jpa_employee</name>
 	<description>Demo project for Spring Boot</description>

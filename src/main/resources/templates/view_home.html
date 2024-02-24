@@ -3,9 +3,15 @@
 <link rel="stylesheet" href="/css/employee.css">
 <style>
     body{
-        width: fit-content;
+        margin-left: 10px;
+        padding: 5px;
     }
     form{
+        width: fit-content;
+    }
+    div{
+        display: grid;
+        grid-template-columns: fit-content(300px) fit-content(300px) 1fr;
     }
 </style>
 <head>
@@ -16,18 +22,19 @@
 <body>
 <h1>Liste des employées</h1>
 
-<ul>
+
+<table>
     <div th:each="v : ${employees}">
-        <a th:text="${v.id}" th:href="@{/employee/home}"></a>
-        <li th:text="${v.name}" th:style="'background-color:' + ${v.fonction.getCodeCouleur}"> </li>
+        <p><a th:text="${v.id}" th:href="@{/employee/{id}(id=${v.id})}"></a></p>
+        <p th:text="${v.name}" th:style="'background-color:' + ${v.fonction.getCodeCouleur}"> </p>
     </div>
-</ul>
+</table>
 
 <h1>Formulaire d'ajout d'un employée</h1>
 
 <form method="post" th:action="@{/employee/addemployee}" th:object="${employee}" >
     <p>
-        <label> Nom: <input type="text" th:field="*{name}"></label>
+        <label> Nom: </label><input type="text" th:field="*{name}">
     </p>
     <p>
         <label>Address: <input type="text" th:field="*{address}"></label>
@@ -38,9 +45,10 @@
     <p>
         <label>Phone:<input type="text" th:field="*{phone}"></label>
     </p>
+
     <p>
-        <select name="color">
-            <option th:each="colorOpt : ${T(fr.devavance.tp_springboot_mvc_jpa_employee.beans.Fonction).values()}"
+        <select name="fonction" th:field="*{fonction}">
+            <option th:each="colorOpt : ${T(fr.devavance.employees.enumeration.Fonction).values()}"
                     th:value="${colorOpt}" th:text="${colorOpt}"></option>
         </select>
     </p>

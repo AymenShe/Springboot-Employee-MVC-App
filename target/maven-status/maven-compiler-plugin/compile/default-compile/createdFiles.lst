@@ -1,6 +1,7 @@
-fr/devavance/tp_springboot_mvc_jpa_employee/beans/Employee.class
-fr/devavance/tp_springboot_mvc_jpa_employee/beans/Fonction.class
-fr/devavance/tp_springboot_mvc_jpa_employee/TpSpringbootMvcJpaEmployeeApplication.class
-fr/devavance/tp_springboot_mvc_jpa_employee/controllers/EmployeeControleur.class
-fr/devavance/tp_springboot_mvc_jpa_employee/dao/EmployeeDAOImpl.class
-fr/devavance/tp_springboot_mvc_jpa_employee/dao/IEmployeeDAO.class
+fr/devavance/employees/TpSpringbootMvcJpaEmployeeApplication.class
+fr/devavance/employees/repository/IEmployeeRepository.class
+fr/devavance/employees/entity/Employee.class
+fr/devavance/employees/enumeration/Fonction.class
+fr/devavance/employees/controllers/implementation/EmployeeControleur.class
+fr/devavance/employees/InitDataRepository.class
+fr/devavance/employees/controllers/IEmployeeController.class
